@@ -1,9 +1,10 @@
-read n 
-s=0 
-for (( i=1;i<=n;i++ )) 
+sum=0
+read number
+sum=0 
+for (( i=1;i<=number;i++ )) 
 do 
-read p
-s=`expr $s + $p` 
+read data
+sum=`expr $sum + $data` 
 done	 
-AVG=$(echo "scale=3; $s/$n" | bc)
-echo $AVG
+
+printf "%.3f\n" `echo "$sum / $number" | bc -l`
